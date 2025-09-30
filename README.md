@@ -316,7 +316,6 @@ try {
 QuickBase Python Client/
 ├── quickbase_rest_client.py          # Python client (70+ methods)
 ├── quickbase_rest_client.js          # JavaScript client (70+ methods)
-├── quickbase_sql_client.py           # SQL client implementation
 ├── QuickBase_RESTful_API_*.json      # Official API specification (52,449 lines)
 ├── package.json                      # Node.js dependencies
 ├── LICENSE                           # MIT License
