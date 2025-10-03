@@ -373,6 +373,44 @@ node -e "const {QuickBaseClient} = require('./quickbase_rest_client'); console.l
 - Initial release with Python client
 - Basic JavaScript client with limited functionality
 
+## Screenshots
+
+> **Note:** Screenshots will be added soon. This is a library/client - usage is demonstrated in the code examples above. Test API calls using Python's interactive shell or Node.js REPL.
+
+## Troubleshooting
+
+### Common Issues
+
+**Issue:** Authentication errors when connecting to QuickBase
+
+**Solution:** Verify your user token is valid and has proper permissions. Check that the realm URL is correct (format: `company.quickbase.com`). Ensure the token hasn't expired.
+
+---
+
+**Issue:** "Table not found" or "Field not found" errors
+
+**Solution:** Confirm table IDs and field IDs are correct. Use `getTables()` and `getFields()` methods to retrieve valid IDs. Check that you have access permissions to the specified resources.
+
+---
+
+**Issue:** Rate limit errors from QuickBase API
+
+**Solution:** The client includes rate limiting features. Enable rate limiting: `client.enable_rate_limiting = True` (Python) or set `enableRateLimiting: true` (JavaScript). Reduce the frequency of API calls.
+
+---
+
+**Issue:** File upload failures
+
+**Solution:** Check file size limits and ensure file paths are correct. Verify the field ID is a file attachment field type. Confirm you have write permissions to the table.
+
+---
+
+**Issue:** Pagination issues with large datasets
+
+**Solution:** Use the `getRecordsPaginated()` method for large result sets. Adjust page size to balance performance and memory usage. Monitor API rate limits when paginating.
+
+For additional help, consult the [QuickBase API Documentation](https://developer.quickbase.com/) or review error messages in console output.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
